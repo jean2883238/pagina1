@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo React</title>
+    <style>
+        body {
+            background-color: black;
+            color: yellow; /* Establece el color del texto por defecto */
+            margin: 0; /* Elimina el margen por defecto */
+            padding: 0; /* Elimina el padding por defecto */
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://reactjs.org/link/react-devtools-faq"></script>
+
+    <script>
+      class HolaMundo extends React.Component {
+        render() {
+          const r1 = React.createElement('h1', { style: { textAlign: 'center' } }, 'Hola mundo, h1');
+          const r2 = React.createElement('h2', {}, 'Aquí otra vez, h2');
+          const p = React.createElement('p', {}, 'Cada vez se aprende con mayor fluidez, párrafo');
+          return React.createElement('div', { style: { padding: '10px' } }, r1, r2, p);
+        }
+      }
+
+      const domContainer = document.querySelector('#app');
+      const root = ReactDOM.createRoot(domContainer);
+      root.render(React.createElement(HolaMundo));
+    </script>
+</body>
+</html>
